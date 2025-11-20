@@ -1,0 +1,96 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+server_out.log
+server_err.log
+logs/
+
+# OS files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# IDE
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Uploads folder (temporary audio files)
+ai-voice-note-backend/uploads/*
+!ai-voice-note-backend/uploads/.gitkeep
+
+# Firebase service account
+**/serviceAccountKey.json
+
+# Build artifacts
+dist/
+build/
+
+# Xcode
+*.xcodeproj/xcuserdata/
+*.xcworkspace/xcuserdata/
+DerivedData/
+*.moved-aside
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+
+# iOS
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# Archives and zips
+*.zip
+*.tar.gz
+
+# Backup files
+*.bak
+*.backup
+
+# Windows system files
+NTUSER.DAT*
+ntuser.*
+Application Data/
+Cookies/
+Local Settings/
+My Documents/
+NetHood/
+PrintHood/
+Recent/
+SendTo/
+Start Menu/
+Templates/
+
+# User-specific folders
+.cursor/
+.trae/
+.trae-aicc/
+AppData/
+Microsoft/
+Documents/
+downloads/
+
+# Git config
+.gitconfig

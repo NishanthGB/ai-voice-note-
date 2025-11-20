@@ -1,0 +1,67 @@
+{
+  "info": {
+    "name": "AI Voice Note Backend",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:5000" },
+    { "key": "apiKey", "value": "YOUR_API_KEY_HERE" },
+    { "key": "userId", "value": "tester" }
+  ],
+  "item": [
+    {
+      "name": "Save Note",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" },
+          { "key": "x-api-key", "value": "{{apiKey}}" },
+          { "key": "ngrok-skip-browser-warning", "value": "1" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Test Note\",\n  \"transcript\": \"This is a test\",\n  \"summary\": \"Short summary\",\n  \"userId\": \"{{userId}}\"\n}"
+        },
+        "url": { "raw": "{{baseUrl}}/save-note", "host": ["{{baseUrl}}"], "path": ["save-note"] }
+      }
+    },
+    {
+      "name": "Get Notes",
+      "request": {
+        "method": "GET",
+  "header": [ { "key": "x-api-key", "value": "{{apiKey}}" }, { "key": "ngrok-skip-browser-warning", "value": "1" } ],
+        "url": { "raw": "{{baseUrl}}/notes?userId={{userId}}", "host": ["{{baseUrl}}"], "path": ["notes"], "query": [ { "key": "userId", "value": "{{userId}}" } ] }
+      }
+    },
+    {
+      "name": "Upload Audio (transcription)",
+      "request": {
+        "method": "POST",
+  "header": [ { "key": "x-api-key", "value": "{{apiKey}}" }, { "key": "ngrok-skip-browser-warning", "value": "1" } ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            { "key": "audio", "type": "file", "src": "" }
+          ]
+        },
+        "url": { "raw": "{{baseUrl}}/upload", "host": ["{{baseUrl}}"], "path": ["upload"] }
+      }
+    },
+    {
+      "name": "Generate Summary",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" },
+          { "key": "x-api-key", "value": "{{apiKey}}" },
+          { "key": "ngrok-skip-browser-warning", "value": "1" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"transcript\": \"Transcript text to summarize...\"\n}"
+        },
+        "url": { "raw": "{{baseUrl}}/summary", "host": ["{{baseUrl}}"], "path": ["summary"] }
+      }
+    }
+  ]
+}

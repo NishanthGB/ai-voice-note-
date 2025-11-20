@@ -1,0 +1,64 @@
+name: Build & Deploy to Cloud Run
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    name: Build image and deploy to Cloud Run
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Cloud SDK
+        uses: google-github-actions/setup-gcloud@v1
+        with:
+          # Option A: supply a service account JSON in GH secret 'GCP_SA_KEY'
+          service_account_key: ${{ secrets.GCP_SA_KEY }}
+          project_id: ${{ secrets.GCP_PROJECT }}
+
+      - name: Configure Docker to use gcloud
+        run: gcloud auth configure-docker --quiet
+
+      - name: Build Docker image
+        run: |
+          IMAGE="${{ secrets.GCP_REGION }}-docker.pkg.dev/${{ secrets.GCP_PROJECT }}/ai-backend-repo/ai-backend:${{ github.sha }}"
+          docker build -t "$IMAGE" .
+          docker push "$IMAGE"
+
+      - name: Deploy to Cloud Run
+        run: |
+          IMAGE="${{ secrets.GCP_REGION }}-docker.pkg.dev/${{ secrets.GCP_PROJECT }}/ai-backend-repo/ai-backend:${{ github.sha }}"
+          gcloud run deploy ai-voice-note-backend \
+            --image "$IMAGE" \
+            --region "${{ secrets.GCP_REGION }}" \
+            --platform managed \
+            --service-account "backend-runner@${{ secrets.GCP_PROJECT }}.iam.gserviceaccount.com" \
+            --allow-unauthenticated \
+            --memory 1Gi \
+            --concurrency 1 \
+            --project "${{ secrets.GCP_PROJECT }}"
+
+      - name: Attach secrets to Cloud Run service
+        run: |
+          # Bind Secret Manager secrets as environment variables inside Cloud Run
+          gcloud run services update ai-voice-note-backend \
+            --region "${{ secrets.GCP_REGION }}" \
+            --update-secrets API_KEY=BACKEND_API_KEY:latest,OPENAI_API_KEY=OPENAI_API_KEY:latest \
+            --project "${{ secrets.GCP_PROJECT }}"
+
+      - name: Output service URL
+        run: |
+          gcloud run services describe ai-voice-note-backend --region "${{ secrets.GCP_REGION }}" --project "${{ secrets.GCP_PROJECT }}" --format="value(status.url)"
+
+  # Notes:
+  # - This workflow expects these GitHub repository secrets to be set:
+  #   - GCP_PROJECT: your GCP project id (e.g. ai-voice-note-82ce3)
+  #   - GCP_REGION: region to deploy (e.g. asia-south1)
+  #   - GCP_SA_KEY: contents of a GCP service account JSON with permissions to build/push and deploy
+  #   - (Optional) BACKEND_API_KEY, OPENAI_API_KEY can remain in Secret Manager and will be attached by the last step.
+  # - Alternative: configure Workload Identity for GitHub Actions instead of a SA key. See docs/GCP_CICD_SETUP.md

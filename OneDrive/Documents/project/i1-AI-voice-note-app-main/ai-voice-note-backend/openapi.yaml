@@ -1,0 +1,255 @@
+openapi: 3.0.1
+info:
+  title: AI Voice Note Backend API
+  version: 1.0.0
+  description: API for audio transcription, AI summarization, and note persistence used by the iOS frontend.
+servers:
+  - url: https://ai-voice-note-backend-965903915503.us-central1.run.app
+    description: Production server (Google Cloud Run)
+  - url: http://localhost:5000
+    description: Local development server
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: x-api-key
+  schemas:
+    TranscriptResponse:
+      type: object
+      properties:
+        transcript:
+          type: string
+          example: "This is the transcribed text from the audio."
+    SummaryRequest:
+      type: object
+      required: [transcript]
+      properties:
+        transcript:
+          type: string
+          example: "Meeting transcript goes here..."
+    SummaryResponse:
+      type: object
+      properties:
+        title:
+          type: string
+          example: "Weekly Sync"
+        summary:
+          type: string
+          example: "Short meeting summary paragraph."
+        action_items:
+          type: array
+          items:
+            type: string
+          example: ["Follow up with design", "Send revised spec"]
+    SaveNoteRequest:
+      type: object
+      required: [title, transcript, summary, userId]
+      properties:
+        title:
+          type: string
+        transcript:
+          type: string
+        summary:
+          type: string
+        userId:
+          type: string
+    SaveNoteResponse:
+      type: object
+      properties:
+        message:
+          type: string
+          example: "Note saved successfully"
+        noteId:
+          type: string
+    Note:
+      type: object
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        transcript:
+          type: string
+        summary:
+          type: string
+        userId:
+          type: string
+        createdAt:
+          type: string
+          format: date-time
+    Error:
+      type: object
+      properties:
+        error:
+          type: string
+
+    ContactRequest:
+      type: object
+      required: [email, subject, description]
+      properties:
+        email:
+          type: string
+          format: email
+        carbonCopy:
+          type: string
+        subject:
+          type: string
+        description:
+          type: string
+        userId:
+          type: string
+    ContactResponse:
+      type: object
+      properties:
+        message:
+          type: string
+        contactId:
+          type: string
+
+paths:
+  /upload:
+    post:
+      summary: Upload audio file for transcription
+      security:
+        - ApiKeyAuth: []
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                audio:
+                  type: string
+                  format: binary
+      responses:
+        '200':
+          description: transcription result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TranscriptResponse'
+        '400':
+          description: Bad request (missing file)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Unauthorized - missing/invalid API key
+  /summary:
+    post:
+      summary: Generate title, summary and action items from transcript via OpenAI
+      security:
+        - ApiKeyAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SummaryRequest'
+      responses:
+        '200':
+          description: AI-generated summary object
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SummaryResponse'
+        '400':
+          description: Missing transcript
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: AI or server error
+  /save-note:
+    post:
+      summary: Save a note
+      security:
+        - ApiKeyAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SaveNoteRequest'
+      responses:
+        '200':
+          description: Note saved
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SaveNoteResponse'
+        '400':
+          description: Missing fields
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /notes:
+    get:
+      summary: Get notes for a user
+      security:
+        - ApiKeyAuth: []
+      parameters:
+        - in: query
+          name: userId
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: list of notes
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Note'
+        '400':
+          description: Missing userId
+  /note/{id}:
+    delete:
+      summary: Delete a note by id
+      security:
+        - ApiKeyAuth: []
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Note deleted
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SaveNoteResponse'
+        '400':
+          description: Missing id
+  /contact:
+    post:
+      summary: Submit contact support message
+      security:
+        - ApiKeyAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ContactRequest'
+      responses:
+        '200':
+          description: Contact saved
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ContactResponse'
+        '400':
+          description: Missing required fields
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'

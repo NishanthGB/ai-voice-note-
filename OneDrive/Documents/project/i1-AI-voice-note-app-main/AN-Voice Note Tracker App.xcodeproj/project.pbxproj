@@ -1,0 +1,443 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		088153742EAE4BAD0079574B /* TimerKit in Frameworks */ = {isa = PBXBuildFile; productRef = 088153732EAE4BAD0079574B /* TimerKit */; };
+		088153772EAE4BEE0079574B /* TranscriptionKit in Frameworks */ = {isa = PBXBuildFile; productRef = 088153762EAE4BEE0079574B /* TranscriptionKit */; };
+		088153792EAE4F030079574B /* TranscriptionKit in Frameworks */ = {isa = PBXBuildFile; productRef = 088153782EAE4F030079574B /* TranscriptionKit */; };
+		0881537C2EAE517B0079574B /* TranscriptionKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0881537B2EAE517B0079574B /* TranscriptionKit */; };
+		088153832EAE528A0079574B /* TimerKit in Frameworks */ = {isa = PBXBuildFile; productRef = 088153822EAE528A0079574B /* TimerKit */; };
+		5DDDCD6E2EC89B2C005377FE /* ThemeKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5DDDCD6D2EC89B2C005377FE /* ThemeKit */; };
+		5DDDCD712EC89B6D005377FE /* SuperwallKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5DDDCD702EC89B6D005377FE /* SuperwallKit */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		088172452E9E57B500B4377D /* AN-Voice Note Tracker App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AN-Voice Note Tracker App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		088172472E9E57B500B4377D /* AN-Voice Note Tracker App */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "AN-Voice Note Tracker App";
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		088172422E9E57B500B4377D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				088153832EAE528A0079574B /* TimerKit in Frameworks */,
+				0881537C2EAE517B0079574B /* TranscriptionKit in Frameworks */,
+				088153772EAE4BEE0079574B /* TranscriptionKit in Frameworks */,
+				088153742EAE4BAD0079574B /* TimerKit in Frameworks */,
+				088153792EAE4F030079574B /* TranscriptionKit in Frameworks */,
+				5DDDCD712EC89B6D005377FE /* SuperwallKit in Frameworks */,
+				5DDDCD6E2EC89B2C005377FE /* ThemeKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0881723C2E9E57B500B4377D = {
+			isa = PBXGroup;
+			children = (
+				088172472E9E57B500B4377D /* AN-Voice Note Tracker App */,
+				088172462E9E57B500B4377D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		088172462E9E57B500B4377D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				088172452E9E57B500B4377D /* AN-Voice Note Tracker App.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		088172442E9E57B500B4377D /* AN-Voice Note Tracker App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 088172502E9E57B700B4377D /* Build configuration list for PBXNativeTarget "AN-Voice Note Tracker App" */;
+			buildPhases = (
+				088172412E9E57B500B4377D /* Sources */,
+				088172422E9E57B500B4377D /* Frameworks */,
+				088172432E9E57B500B4377D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				088172472E9E57B500B4377D /* AN-Voice Note Tracker App */,
+			);
+			name = "AN-Voice Note Tracker App";
+			packageProductDependencies = (
+				088153732EAE4BAD0079574B /* TimerKit */,
+				088153762EAE4BEE0079574B /* TranscriptionKit */,
+				088153782EAE4F030079574B /* TranscriptionKit */,
+				0881537B2EAE517B0079574B /* TranscriptionKit */,
+				088153822EAE528A0079574B /* TimerKit */,
+				5DDDCD6D2EC89B2C005377FE /* ThemeKit */,
+				5DDDCD702EC89B6D005377FE /* SuperwallKit */,
+			);
+			productName = "AN-Voice Note Tracker App";
+			productReference = 088172452E9E57B500B4377D /* AN-Voice Note Tracker App.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0881723D2E9E57B500B4377D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2600;
+				LastUpgradeCheck = 2600;
+				TargetAttributes = {
+					088172442E9E57B500B4377D = {
+						CreatedOnToolsVersion = 26.0.1;
+					};
+				};
+			};
+			buildConfigurationList = 088172402E9E57B500B4377D /* Build configuration list for PBXProject "AN-Voice Note Tracker App" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0881723C2E9E57B500B4377D;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				5DA3FCCC2EB7767400430EA3 /* XCLocalSwiftPackageReference "../../Desktop/TranscriptionKit" */,
+				5DA3FCCD2EB7769D00430EA3 /* XCLocalSwiftPackageReference "../../Desktop/TimerKit" */,
+				5DA3FCCE2EB776C700430EA3 /* XCLocalSwiftPackageReference "../../Desktop/ThemeKit" */,
+				5DDDCD6F2EC89B6D005377FE /* XCRemoteSwiftPackageReference "Superwall-iOS" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 088172462E9E57B500B4377D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				088172442E9E57B500B4377D /* AN-Voice Note Tracker App */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		088172432E9E57B500B4377D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		088172412E9E57B500B4377D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		0881724E2E9E57B700B4377D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		0881724F2E9E57B700B4377D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		088172512E9E57B700B4377D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 8;
+				DEVELOPMENT_TEAM = W6F34ZW4S8;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "AN-Voice-Note-Tracker-App-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = VoiceNoteApp;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "We need to unlock your data.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "We need microphone acces to record your voice";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "We need your speech to convert voice into text.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = AN_Voice_Note_Tracker_AppApp.swift;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.newage.ANVoiceNoteTracker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		088172522E9E57B700B4377D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 8;
+				DEVELOPMENT_TEAM = W6F34ZW4S8;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "AN-Voice-Note-Tracker-App-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = VoiceNoteApp;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "We need to unlock your data.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "We need microphone acces to record your voice";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "We need your speech to convert voice into text.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = AN_Voice_Note_Tracker_AppApp.swift;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.newage.ANVoiceNoteTracker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		088172402E9E57B500B4377D /* Build configuration list for PBXProject "AN-Voice Note Tracker App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0881724E2E9E57B700B4377D /* Debug */,
+				0881724F2E9E57B700B4377D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		088172502E9E57B700B4377D /* Build configuration list for PBXNativeTarget "AN-Voice Note Tracker App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				088172512E9E57B700B4377D /* Debug */,
+				088172522E9E57B700B4377D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		5DA3FCCC2EB7767400430EA3 /* XCLocalSwiftPackageReference "../../Desktop/TranscriptionKit" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../../Desktop/TranscriptionKit;
+		};
+		5DA3FCCD2EB7769D00430EA3 /* XCLocalSwiftPackageReference "../../Desktop/TimerKit" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../../Desktop/TimerKit;
+		};
+		5DA3FCCE2EB776C700430EA3 /* XCLocalSwiftPackageReference "../../Desktop/ThemeKit" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../../Desktop/ThemeKit;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5DDDCD6F2EC89B6D005377FE /* XCRemoteSwiftPackageReference "Superwall-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/superwall-me/Superwall-iOS";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.10.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		088153732EAE4BAD0079574B /* TimerKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = TimerKit;
+		};
+		088153762EAE4BEE0079574B /* TranscriptionKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = TranscriptionKit;
+		};
+		088153782EAE4F030079574B /* TranscriptionKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = TranscriptionKit;
+		};
+		0881537B2EAE517B0079574B /* TranscriptionKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = TranscriptionKit;
+		};
+		088153822EAE528A0079574B /* TimerKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = TimerKit;
+		};
+		5DDDCD6D2EC89B2C005377FE /* ThemeKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ThemeKit;
+		};
+		5DDDCD702EC89B6D005377FE /* SuperwallKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5DDDCD6F2EC89B6D005377FE /* XCRemoteSwiftPackageReference "Superwall-iOS" */;
+			productName = SuperwallKit;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 0881723D2E9E57B500B4377D /* Project object */;
+}
