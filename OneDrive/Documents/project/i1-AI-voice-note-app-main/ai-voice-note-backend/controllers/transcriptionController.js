@@ -15,17 +15,18 @@ exports.transcribeAudio = async (req, res, next) => {
     }
     
     const audioPath = path.resolve(req.file.path);
-    const originalFilename = req.file.originalname || `audio${Date.now()}`;
-    
-    // Create a readable stream with proper file metadata
-    const audioStream = fs.createReadStream(audioPath);
-    audioStream.path = originalFilename;
-    audioStream.filename = originalFilename;
+    const originalFilename = req.file.originalname || 'audio.mp3';
     
     try {
+      // OpenAI SDK v4+ requires file to be passed with toFile() or as a proper File object
+      // We need to use toFile() to create a proper file reference with the original filename
+      const { toFile } = await import('openai/uploads');
+      const fileContent = fs.readFileSync(audioPath);
+      const file = await toFile(fileContent, originalFilename);
+      
       // Whisper API call - requires filename for format validation
       const response = await openai.audio.transcriptions.create({
-        file: audioStream,
+        file: file,
         model: 'whisper-1',
         response_format: 'json',
         temperature: 0.2,
